@@ -8,41 +8,10 @@ type Media = {
 }
 
 type Colors = {
-  background: {
-    paper: string;
-    default: string;
-  };
-  text: {
-    primary: string;
-    secondary: string;
-    disabled: string;
-  };
-  primary: {
-    main: string;
-    dark: string;
-    light: string;
-  };
-  secondary: {
-    main: string;
-  };
-  action: {
-    active: string;
-    disabled: string;
-    disabledBackground: string;
-  };
-  others: {
-    contrast: string;
-    divider: string;
-  };
-  components: {
-    outline: string;
-  };
-  neutral: {
-    900: string;
-    500: string;
-    300: string;
-    400: string;
-  }
+  background: string;
+  primary: string;
+  secondary: string;
+  accent: string;
 }
 
 declare module "styled-components" {
