@@ -38,4 +38,8 @@ export default createGlobalStyle`
     font-family: Roboto;
     color: var(--primary);
   }
+
+  img {
+    user-select: none;
+  }
 `;

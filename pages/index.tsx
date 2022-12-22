@@ -1,10 +1,11 @@
 import { Navbar } from "@components";
+import { Featured, Hero } from "@section";
 import { outfit } from "@styles/GlobalStyles";
 import { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 
-const Main = styled.main`
+const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -44,15 +45,27 @@ const Main = styled.main`
   }
 `;
 
+const Main = styled.main`
+  width: 100%;
+  padding: 3rem 11.75rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 9.188rem;
+`;
+
 const HomePage: NextPage = () => {
   return (
     <>
       <Head>
         <title>Krypto | Home Page</title>
       </Head>
-      <Main className={outfit.variable}>
+      <Container className={outfit.variable}>
         <Navbar />
-      </Main>
+        <Main>
+          <Hero />
+          <Featured />
+        </Main>
+      </Container>
     </>
   );
 };
