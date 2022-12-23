@@ -4,6 +4,7 @@ export const BodyText = styled.p`
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.719rem;
+  letter-spacing: 1px;
 `;
 
 export const MainHeader = styled.h1`
@@ -31,7 +32,8 @@ export const Button = styled.button`
   border-radius: 6.25rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 1.5rem 3.75rem;
+  padding: 1.5rem 3.5rem;
+  font-family: var(--outfit);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.719rem;
@@ -39,4 +41,5 @@ export const Button = styled.button`
   color: var(--primary);
   border: 2px solid var(--primary);
   cursor: pointer;
+  letter-spacing: 2px;
 `;

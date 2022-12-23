@@ -1,5 +1,5 @@
 import { Navbar } from "@components";
-import { Featured, Hero } from "@section";
+import { Analytics, Featured, Hero } from "@section";
 import { outfit } from "@styles/GlobalStyles";
 import { NextPage } from "next";
 import Head from "next/head";
@@ -64,6 +64,7 @@ const HomePage: NextPage = () => {
         <Main>
           <Hero />
           <Featured />
+          <Analytics />
         </Main>
       </Container>
     </>
