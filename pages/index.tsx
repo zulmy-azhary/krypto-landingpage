@@ -46,11 +46,24 @@ const Container = styled.div`
 `;
 
 const Main = styled.main`
-  width: 100%;
-  padding: 3rem 11.75rem;
+  width: calc(var(--mobile) / 1.125);
   display: flex;
   flex-direction: column;
   row-gap: 9.188rem;
+  padding: 1.5rem 0;
+
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
+    width: calc(var(--tablet) / 1.125);
+  }
+
+  @media (min-width: ${props => props.theme.media.laptop}) {
+    width: calc(var(--laptop) / 1.25);
+    padding: 3rem 0;
+  }
+
+  @media (min-width: ${props => props.theme.media.desktop}) {
+    width: calc(var(--desktop) / 1.35);
+  }
 `;
 
 const HomePage: NextPage = () => {

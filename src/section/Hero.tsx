@@ -7,15 +7,34 @@ const Section = styled.section`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  min-height: 65vh;
+  flex-direction: column-reverse;
+  row-gap: 2.5rem;
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    flex-direction: row;
+  }
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    min-height: 65vh;
+  }
 `;
 
 const HeroContent = styled.div`
   align-self: end;
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
   width: 100%;
+  text-align: center;
+  row-gap: 0.875rem;
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    text-align: start;
+    row-gap: 1.5rem;
+  }
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    row-gap: 3rem;
+  }
 `;
 
 const CustomBodyText = styled(BodyText)`
@@ -30,6 +49,11 @@ const Action = styled.div`
   display: flex;
   align-items: center;
   column-gap: 1rem;
+  justify-content: center;
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    justify-content: start;
+  }
 `;
 
 const Buy = styled(Button)`
@@ -44,7 +68,16 @@ const Sell = styled(Button)`
 
 const Image = styled.img`
   object-fit: contain;
-  align-self: start;
+  width: calc(var(--mobile) / 1.125);
+
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
+    width: calc(var(--tablet) / 1.5);
+  }
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    width: calc(var(--laptop) / 2.25);
+    align-self: start;
+  }
 
   @media (min-width: ${(props) => props.theme.media.desktop}) {
     width: calc(var(--desktop) / 2.5);

@@ -6,11 +6,17 @@ const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   column-gap: 1.75rem;
 `;
 
 const Image = styled.img`
+  object-fit: contain;
   flex: 1;
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    width: calc(var(--desktop) / 2.75);
+  }
 `;
 
 const Content = styled.div`
