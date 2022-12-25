@@ -8,6 +8,12 @@ const Section = styled.section`
   align-items: center;
   width: 100%;
   column-gap: 1.75rem;
+  flex-direction: column;
+  row-gap: 2.5rem;
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    flex-direction: row;
+  }
 `;
 
 const Image = styled.img`

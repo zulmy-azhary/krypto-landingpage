@@ -1,5 +1,5 @@
 import { Navbar } from "@components";
-import { Analytics, Featured, Hero } from "@section";
+import { Analytics, Featured, Hero, Mobile } from "@section";
 import { outfit } from "@styles/GlobalStyles";
 import { NextPage } from "next";
 import Head from "next/head";
@@ -16,6 +16,8 @@ const Container = styled.div`
   &:before,
   &:after {
     content: "";
+    width: var(--size);
+    height: var(--size);
     position: absolute;
     border-radius: 50%;
     z-index: -9999;
@@ -23,25 +25,49 @@ const Container = styled.div`
   }
 
   &:before {
-    --size: 918px;
-    width: var(--size);
-    height: var(--size);
+    --size: 400px;
     background-color: var(--secondary);
     opacity: 0.75;
-    top: -17.5rem;
-    left: -17.5rem;
-    filter: blur(150px);
+    top: -10rem;
+    left: -10rem;
+    filter: blur(125px);
   }
 
   &:after {
-    --size: 806px;
-    width: var(--size);
-    height: var(--size);
+    --size: 400px;
     background-color: var(--accent);
     opacity: 0.65;
-    right: -23rem;
-    top: 10.125rem;
-    filter: blur(200px);
+    right: -15rem;
+    top: 12rem;
+    filter: blur(150px);
+  }
+
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
+    &:before {
+      --size: 700px;
+      top: -17.5rem;
+      left: -17.5rem;
+      filter: blur(150px);
+    }
+
+    &:after {
+      --size: 600px;
+      right: -23rem;
+      top: 15.125rem;
+      filter: blur(200px);
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    &:before {
+      --size: 918px;
+    }
+
+    &:after {
+      --size: 806px;
+      right: -23rem;
+      top: 10.125rem;
+    }
   }
 `;
 
@@ -56,12 +82,12 @@ const Main = styled.main`
     width: calc(var(--tablet) / 1.125);
   }
 
-  @media (min-width: ${props => props.theme.media.laptop}) {
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
     width: calc(var(--laptop) / 1.25);
     padding: 3rem 0;
   }
 
-  @media (min-width: ${props => props.theme.media.desktop}) {
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
     width: calc(var(--desktop) / 1.35);
   }
 `;
@@ -78,6 +104,7 @@ const HomePage: NextPage = () => {
           <Hero />
           <Featured />
           <Analytics />
+          <Mobile />
         </Main>
       </Container>
     </>

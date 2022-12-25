@@ -20,14 +20,24 @@ const Wrapper = styled.div`
   margin-top: 2px;
   background-color: #28225d60;
   border-radius: 0.938rem;
+
+  @media (min-width: ${props => props.theme.media.laptop}) {
+    justify-content: space-evenly;
+  }
 `;
 
 const Image = styled.img`
   width: fit-content;
   height: fit-content;
+  /* padding: 1rem 0; */
   object-fit: contain;
   opacity: 0.75;
   cursor: pointer;
+
+  @media (min-width: ${props => props.theme.media.laptop}) {
+    /* padding: 0;
+    height: fit-content; */
+  }
 
   &:hover {
     opacity: 1;

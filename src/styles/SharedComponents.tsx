@@ -67,6 +67,7 @@ export const Button = styled.button`
   cursor: pointer;
   letter-spacing: 2px;
   padding: 0.5rem 1.5rem;
+  width: fit-content;
 
   @media (min-width: ${(props) => props.theme.media.laptop}) {
     font-size: 1rem;
