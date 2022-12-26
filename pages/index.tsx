@@ -1,5 +1,5 @@
-import { Navbar } from "@components";
-import { Analytics, Featured, Hero, Mobile } from "@section";
+import { Footer, Navbar } from "@components";
+import { Action, Analytics, Featured, Hero, Mobile, Testimonials } from "@section";
 import { outfit } from "@styles/GlobalStyles";
 import { NextPage } from "next";
 import Head from "next/head";
@@ -89,6 +89,7 @@ const Main = styled.main`
 
   @media (min-width: ${(props) => props.theme.media.desktop}) {
     width: calc(var(--desktop) / 1.35);
+    padding-bottom: 15.125rem;
   }
 `;
 
@@ -105,7 +106,10 @@ const HomePage: NextPage = () => {
           <Featured />
           <Analytics />
           <Mobile />
+          <Testimonials />
+          <Action />
         </Main>
+        <Footer />
       </Container>
     </>
   );
