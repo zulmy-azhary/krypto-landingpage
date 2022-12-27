@@ -1,5 +1,5 @@
 import { Card } from "@components";
-import { SubHeader, SubHeading } from "@styles/SharedComponents";
+import { SubHeader, Heading } from "@styles/SharedComponents";
 import React from "react";
 import styled from "styled-components";
 
@@ -21,13 +21,6 @@ const Header = styled.div`
   }
 `;
 
-const TestimonialsTitle = styled(SubHeading)`
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 600;
-  color: var(--primary);
-`;
-
 const Box = styled.div`
   display: flex;
   justify-content: center;
@@ -39,7 +32,7 @@ const Testimonials: React.FC = () => {
   return (
     <Section>
       <Header>
-        <TestimonialsTitle>Testimonials</TestimonialsTitle>
+        <Heading>Testimonials</Heading>
         <SubHeader>Read What Others Have To Say</SubHeader>
       </Header>
       <Box>

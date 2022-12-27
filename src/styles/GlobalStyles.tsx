@@ -42,4 +42,18 @@ export default createGlobalStyle`
   img {
     user-select: none;
   }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
 `;

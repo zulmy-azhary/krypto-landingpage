@@ -1,4 +1,5 @@
-import { BodyText, Button, MainHeader } from "@styles/SharedComponents";
+import { Button } from "@components";
+import { Text, MainHeader } from "@styles/SharedComponents";
 import React from "react";
 import styled from "styled-components";
 
@@ -37,14 +38,6 @@ const HeroContent = styled.div`
   }
 `;
 
-const CustomBodyText = styled(BodyText)`
-  width: 100%;
-
-  @media (min-width: ${(props) => props.theme.media.desktop}) {
-    max-width: 70%;
-  }
-`;
-
 const Action = styled.div`
   display: flex;
   align-items: center;
@@ -54,16 +47,6 @@ const Action = styled.div`
   @media (min-width: ${(props) => props.theme.media.laptop}) {
     justify-content: start;
   }
-`;
-
-const Buy = styled(Button)`
-  background-color: var(--secondary);
-  border-color: var(--secondary);
-`;
-
-const Sell = styled(Button)`
-  background-color: transparent;
-  border-color: var(--accent);
 `;
 
 const Image = styled.img`
@@ -89,12 +72,12 @@ const Hero: React.FC = () => {
     <Section>
       <HeroContent>
         <MainHeader>Discover And Collect Rare NFTs</MainHeader>
-        <CustomBodyText>
+        <Text maxWidth="70%">
           The most secure marketplace for buying and selling unique crypto assets.
-        </CustomBodyText>
+        </Text>
         <Action>
-          <Buy>Buy Nfts</Buy>
-          <Sell>Sell Nfts</Sell>
+          <Button variant="primary">Buy Nfts</Button>
+          <Button variant="secondary">Sell Nfts</Button>
         </Action>
       </HeroContent>
       <Image src="/assets/img-hero.png" alt="Hero Image" />

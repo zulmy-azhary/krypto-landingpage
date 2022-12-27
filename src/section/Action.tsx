@@ -1,4 +1,5 @@
-import { Button, MainHeader, SubHeading } from "@styles/SharedComponents";
+import { Button } from "@components";
+import { Heading } from "@styles/SharedComponents";
 import React from "react";
 import styled from "styled-components";
 
@@ -24,11 +25,8 @@ const Header = styled.div`
   }
 `;
 
-const Title = styled(SubHeading)`
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 600;
-  color: black;
+const Title = styled(Heading)`
+  color: black !important;
 `;
 
 const Text = styled.h2`
@@ -38,12 +36,6 @@ const Text = styled.h2`
   color: var(--primary);
 `;
 
-const PrimaryButton = styled(Button)`
-  background-color: black;
-  border-color: black;
-  width: fit-content;
-`;
-
 const Action: React.FC = () => {
   return (
     <Container>
@@ -51,7 +43,7 @@ const Action: React.FC = () => {
         <Title>Are you ready?</Title>
         <Text>Be A Part Of The Next Big Thing</Text>
       </Header>
-      <PrimaryButton>Get Started</PrimaryButton>
+      <Button variant="accent">Get Started</Button>
     </Container>
   );
 };

@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
-export const BodyText = styled.p`
+export const Text = styled.p<{ maxWidth?: string }>`
+  width: 100%;
   font-weight: 400;
   letter-spacing: 1px;
-  
-  @media (min-width: ${props => props.theme.media.laptop}) {
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
     font-size: 1.125rem;
     line-height: 1.719rem;
+  }
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    max-width: ${(props) => props.maxWidth};
   }
 `;
 
@@ -29,11 +34,13 @@ export const MainHeader = styled.h1`
   }
 `;
 
-export const SubHeading = styled.h3`
-  font-weight: 500;
+export const Heading = styled.h3`
   letter-spacing: 10%;
   line-height: 1.719rem;
   font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--primary);
 
   @media (min-width: ${(props) => props.theme.media.laptop}) {
     font-size: 1.25rem;
@@ -51,31 +58,5 @@ export const SubHeader = styled.h2`
   @media (min-width: ${(props) => props.theme.media.desktop}) {
     font-size: 3.563rem;
     line-height: 3.125rem;
-  }
-`;
-
-export const Button = styled.button`
-  border-radius: 6.25rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: var(--outfit);
-  font-weight: 500;
-  line-height: 1.719rem;
-  letter-spacing: 10%;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-  cursor: pointer;
-  letter-spacing: 2px;
-  padding: 0.5rem 1.5rem;
-  width: fit-content;
-
-  @media (min-width: ${(props) => props.theme.media.laptop}) {
-    font-size: 1rem;
-    padding: 1rem 2rem;
-  }
-
-  @media (min-width: ${(props) => props.theme.media.desktop}) {
-    font-size: 1.25rem;
-    padding: 1.5rem 3.5rem;
   }
 `;

@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@hooks";
-import { SubHeading } from "@styles/SharedComponents";
+import { Heading, Text } from "@styles/SharedComponents";
 import { theme } from "@styles/theme";
 import React from "react";
 import styled from "styled-components";
@@ -7,7 +7,7 @@ import styled from "styled-components";
 const Header = styled.header`
   width: calc(var(--mobile) / 1.125);
   padding: 1.5rem 0;
-  
+
   @media (min-width: ${(props) => props.theme.media.tablet}) {
     width: calc(var(--tablet) / 1.125);
     padding: 2.5rem 0;
@@ -28,14 +28,12 @@ const Nav = styled.nav`
   align-items: center;
 `;
 
-const Brand = styled(SubHeading)`
+const Brand = styled(Heading)`
   font-family: var(--outfit);
-  text-transform: uppercase;
   font-weight: bold;
 `;
 
 const List = styled.ul`
-  list-style-type: none;
   display: flex;
   justify-content: align-items;
 
@@ -52,10 +50,8 @@ const List = styled.ul`
   }
 `;
 
-const Item = styled(SubHeading)`
+const Item = styled(Text)`
   font-family: var(--outfit);
-  font-weight: 300;
-  cursor: pointer;
 
   &:hover {
     color: var(--accent);
@@ -70,10 +66,13 @@ const Navbar: React.FC = () => {
         <Brand>Krypto</Brand>
         {isTablet && (
           <List>
-            <Item as="li">about</Item>
-            <Item as="li">pricing</Item>
-            <Item as="li">contact</Item>
-            <Item as="li">buy nfts</Item>
+            {["about", "pricing", "contact", "buy nfts"].map((item) => (
+              <li key={item}>
+                <Item as="a" href="#">
+                  {item}
+                </Item>
+              </li>
+            ))}
           </List>
         )}
       </Nav>

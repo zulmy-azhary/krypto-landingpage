@@ -1,6 +1,7 @@
-import { BodyText, SubHeader, SubHeading, Button } from '@styles/SharedComponents';
-import React from 'react'
-import styled from 'styled-components';
+import { Button } from "@components";
+import { Text, SubHeader, Heading } from "@styles/SharedComponents";
+import React from "react";
+import styled from "styled-components";
 
 const Section = styled.section`
   display: flex;
@@ -22,26 +23,6 @@ const Content = styled.div`
   flex: 1;
 `;
 
-const AppTitle = styled(SubHeading)`
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 600;
-  color: var(--primary);
-`;
-
-const CustomBodyText = styled(BodyText)`
-  width: 100%;
-
-  @media (min-width: ${(props) => props.theme.media.desktop}) {
-    max-width: 80%;
-  }
-`;
-
-const Download = styled(Button)`
-  background-color: transparent;
-  border-color: var(--accent);
-`;
-
 const Image = styled.img`
   object-fit: contain;
   flex: 1;
@@ -55,14 +36,16 @@ const Mobile: React.FC = () => {
   return (
     <Section>
       <Content>
-        <AppTitle>Get Our App</AppTitle>
+        <Heading>Get Our App</Heading>
         <SubHeader>Browse Nfts From Your Smartphone</SubHeader>
-        <CustomBodyText>Our Krypto app is the easiest way to keep track of your assets when you’re on the go.</CustomBodyText>
-        <Download>Download On IOS</Download>
+        <Text maxWidth="80%">
+          Our Krypto app is the easiest way to keep track of your assets when you’re on the go.
+        </Text>
+        <Button variant="secondary">Download On IOS</Button>
       </Content>
       <Image src="/assets/img-app.png" alt="App Image" />
     </Section>
-  )
-}
+  );
+};
 
-export default Mobile
+export default Mobile;

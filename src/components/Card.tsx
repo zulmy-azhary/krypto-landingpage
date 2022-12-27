@@ -1,4 +1,4 @@
-import { SubHeading } from "@styles/SharedComponents";
+import { Heading } from "@styles/SharedComponents";
 import React from "react";
 import styled from "styled-components";
 
@@ -45,13 +45,6 @@ const Image = styled.img`
   }
 `;
 
-const Name = styled(SubHeading)`
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 600;
-  color: var(--primary);
-`;
-
 const Description = styled.p`
   font-size: 1.125rem;
   line-height: 1.563rem;
@@ -69,7 +62,7 @@ const Card: React.FC<Props> = ({ name, image, desc }) => {
       <Profile>
         <Image src={`/assets/${image}.png`} alt={name} />
       </Profile>
-      <Name>{name}</Name>
+      <Heading>{name}</Heading>
       <Description>
         {desc ??
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper scelerisque mi, in malesuada felis malesuada vel."}

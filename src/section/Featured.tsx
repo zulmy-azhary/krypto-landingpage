@@ -1,16 +1,9 @@
-import { SubHeading } from "@styles/SharedComponents";
+import { Heading } from "@styles/SharedComponents";
 import React from "react";
 import styled from "styled-components";
 
 const Section = styled.section`
   width: 100%;
-`;
-
-const Heading = styled(SubHeading)`
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 600;
-  color: var(--primary);
 `;
 
 const Wrapper = styled.div`
@@ -21,7 +14,7 @@ const Wrapper = styled.div`
   background-color: #28225d60;
   border-radius: 0.938rem;
 
-  @media (min-width: ${props => props.theme.media.laptop}) {
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
     justify-content: space-evenly;
   }
 `;
@@ -34,7 +27,7 @@ const Image = styled.img`
   opacity: 0.75;
   cursor: pointer;
 
-  @media (min-width: ${props => props.theme.media.laptop}) {
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
     /* padding: 0;
     height: fit-content; */
   }
