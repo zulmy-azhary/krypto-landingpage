@@ -22,10 +22,18 @@ const Header = styled.div`
 `;
 
 const Box = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   justify-content: center;
-  align-items: center;
-  column-gap: 10px;
+  gap: 5rem 10px;
+
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
+    column-gap: 3.5rem;
+  }
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    gap: 5rem 10px;
+  }
 `;
 
 const Testimonials: React.FC = () => {
@@ -36,22 +44,10 @@ const Testimonials: React.FC = () => {
         <SubHeader>Read What Others Have To Say</SubHeader>
       </Header>
       <Box>
-        <Card
-          name={"Olivia Cole"}
-          image={"user-1"}
-        />
-        <Card
-          name={"Evan White"}
-          image={"user-2"}
-        />
-        <Card
-          name={"Jessica Page"}
-          image={"user-3"}
-        />
-        <Card
-          name={"Olivia Cole"}
-          image={"user-1"}
-        />
+        <Card name={"Olivia Cole"} image={"user-1"} />
+        <Card name={"Evan White"} image={"user-2"} />
+        <Card name={"Jessica Page"} image={"user-3"} />
+        <Card name={"Olivia Cole"} image={"user-1"} />
       </Box>
     </Section>
   );

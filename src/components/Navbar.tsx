@@ -1,24 +1,14 @@
 import { useMediaQuery } from "@hooks";
-import { Heading, Text } from "@styles/SharedComponents";
+import { Heading, Layout, Text } from "@styles/SharedComponents";
 import { theme } from "@styles/theme";
 import React from "react";
 import styled from "styled-components";
 
-const Header = styled.header`
-  width: calc(var(--mobile) / 1.125);
+const Header = styled(Layout)`
   padding: 1.5rem 0;
 
   @media (min-width: ${(props) => props.theme.media.tablet}) {
-    width: calc(var(--tablet) / 1.125);
     padding: 2.5rem 0;
-  }
-
-  @media (min-width: ${(props) => props.theme.media.laptop}) {
-    width: calc(var(--laptop) / 1.25);
-  }
-
-  @media (min-width: ${(props) => props.theme.media.desktop}) {
-    width: calc(var(--desktop) / 1.35);
   }
 `;
 
@@ -61,7 +51,7 @@ const Item = styled(Text)`
 const Navbar: React.FC = () => {
   const isTablet = useMediaQuery(`(min-width: ${theme.media.tablet})`);
   return (
-    <Header>
+    <Header as="header">
       <Nav>
         <Brand>Krypto</Brand>
         {isTablet && (

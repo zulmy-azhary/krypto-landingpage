@@ -12,18 +12,31 @@ const Container = styled.div`
   text-align: center;
   padding: 0 2.125rem 2.125rem;
   border-radius: 0.938rem;
+  grid-column: span 12 / span 12;
+
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
+    grid-column: span 6 / span 6;
+  }
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    grid-column: span 4 / span 4;
+  }
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    grid-column: span 3 / span 3;
+  }
 `;
 
 const Profile = styled.div`
-  margin: -3.75rem auto 0;
+  margin: -2.75rem auto 0;
   position: relative;
 
   &:after {
-    --size: 1.938rem;
+    --size: 1.25rem;
     position: absolute;
     content: "";
     top: 0.5rem;
-    right: -0.25rem;
+    right: 0;
     z-index: 9;
     width: var(--size);
     height: var(--size);
@@ -31,15 +44,30 @@ const Profile = styled.div`
     mix-blend-mode: screen;
     border-radius: 50%;
   }
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    margin-top: -3.75rem;
+
+    &:after {
+      --size: 1.938rem;
+      right: -0.25rem;
+    }
+  }
 `;
 
 const Image = styled.img`
-  --size: 75px;
+  --size: 100px;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
   mix-blend-mode: luminosity;
 
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
+    --size: 100px;
+  }
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    --size: 90px;
+  }
   @media (min-width: ${(props) => props.theme.media.desktop}) {
     --size: fit-content;
   }

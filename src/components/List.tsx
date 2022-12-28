@@ -6,6 +6,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+  grid-column: span 2 / span 2;
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    grid-column: span 1 / span 1;
+  }
 `;
 
 const Ul = styled.ul`

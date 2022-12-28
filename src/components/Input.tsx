@@ -5,6 +5,7 @@ import { Btn } from "./Button";
 const Wrapper = styled.div`
   position: relative;
   min-width: 21.563rem;
+  width: fit-content;
   height: max-content;
 `;
 
@@ -18,6 +19,7 @@ const InputForm = styled.input`
   background-color: var(--bgColor);
   border-radius: 100px;
   width: 100%;
+  padding-right: 7.5rem;
   line-height: 1.719rem;
   color: var(--primary);
 
@@ -44,7 +46,7 @@ const Submit = styled(Btn)`
 const Input: React.FC = () => {
   return (
     <Wrapper>
-      <InputForm placeholder="Email Address" />
+      <InputForm type="email" placeholder="Email Address" />
       <Submit $variant="primary">Submit</Submit>
     </Wrapper>
   );

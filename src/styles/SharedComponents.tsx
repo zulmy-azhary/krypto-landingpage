@@ -60,3 +60,19 @@ export const SubHeader = styled.h2`
     line-height: 3.125rem;
   }
 `;
+
+export const Layout = styled.div`
+  width: calc(var(--mobile) / 1.125);
+  
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
+    width: calc(var(--tablet) / 1.125);
+  }
+
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    width: calc(var(--laptop) / 1.25);
+  }
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    width: calc(var(--desktop) / 1.35);
+  }
+`;

@@ -1,6 +1,7 @@
 import { Footer, Navbar } from "@components";
 import { Action, Analytics, Featured, Hero, Mobile, Testimonials } from "@section";
 import { outfit } from "@styles/GlobalStyles";
+import { Layout } from "@styles/SharedComponents";
 import { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
@@ -71,24 +72,17 @@ const Container = styled.div`
   }
 `;
 
-const Main = styled.main`
-  width: calc(var(--mobile) / 1.125);
+const Main = styled(Layout)`
   display: flex;
   flex-direction: column;
   row-gap: 9.188rem;
   padding: 1.5rem 0;
 
-  @media (min-width: ${(props) => props.theme.media.tablet}) {
-    width: calc(var(--tablet) / 1.125);
-  }
-
   @media (min-width: ${(props) => props.theme.media.laptop}) {
-    width: calc(var(--laptop) / 1.25);
     padding: 3rem 0;
   }
 
   @media (min-width: ${(props) => props.theme.media.desktop}) {
-    width: calc(var(--desktop) / 1.35);
     padding-bottom: 15.125rem;
   }
 `;
@@ -101,7 +95,7 @@ const HomePage: NextPage = () => {
       </Head>
       <Container className={outfit.variable}>
         <Navbar />
-        <Main>
+        <Main as="main">
           <Hero />
           <Featured />
           <Analytics />
