@@ -31,6 +31,13 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 2.188rem;
+  align-items: center;
+  text-align: center;
+
+  @media (min-width: ${props => props.theme.media.laptop}) {
+    align-items: start;
+    text-align: start;
+  }
 `;
 
 const Analytics: React.FC = () => {

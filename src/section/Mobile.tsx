@@ -21,6 +21,13 @@ const Content = styled.div`
   flex-direction: column;
   row-gap: 2rem;
   flex: 1;
+  align-items: center;
+  text-align: center;
+
+  @media (min-width: ${props => props.theme.media.laptop}) {
+    align-items: start;
+    text-align: start;
+  }
 `;
 
 const Image = styled.img`

@@ -36,13 +36,33 @@ const Footer: React.FC = () => {
     <Container>
       <Wrapper>
         <Title>Krypto</Title>
-        <List name="Krypto" list={["Home", "About", "Pricing", "Support"]} />
-        <List name="Market" list={["Browse NFTs", "Buy NFTs", "Sell NFTs"]} />
-        <List name="Contact" list={["Email", "LinkedIn", "Instagram", "Twitter", "Facebook"]} />
+        {data.map(({ name, list }: Data) => (
+          <List key={name} name={name} list={list} />
+        ))}
         <Newsletter />
       </Wrapper>
     </Container>
   );
 };
+
+type Data = {
+  name: string;
+  list: string[];
+};
+
+const data: Data[] = [
+  {
+    name: "Krypto",
+    list: ["Home", "About", "Pricing", "Support"],
+  },
+  {
+    name: "Market",
+    list: ["Browse NFTs", "Buy NFTs", "Sell NFTs"],
+  },
+  {
+    name: "Contact",
+    list: ["Email", "LinkedIn", "Instagram", "Twitter", "Facebook"],
+  },
+];
 
 export default Footer;
