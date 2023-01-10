@@ -10,9 +10,10 @@ const Section = styled.section`
   width: 100%;
   column-gap: 1.75rem;
   flex-direction: column;
-  row-gap: 2.5rem;
-
+  row-gap: 1.75rem;
+  
   @media (min-width: ${(props) => props.theme.media.laptop}) {
+    row-gap: 2.5rem;
     flex-direction: row;
   }
 `;
@@ -30,11 +31,12 @@ const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  row-gap: 2.188rem;
   align-items: center;
   text-align: center;
+  row-gap: 1rem;
 
-  @media (min-width: ${props => props.theme.media.laptop}) {
+  @media (min-width: ${(props) => props.theme.media.laptop}) {
+    row-gap: 2.188rem;
     align-items: start;
     text-align: start;
   }

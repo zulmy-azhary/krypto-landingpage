@@ -75,14 +75,16 @@ const Container = styled.div`
 const Main = styled(Layout)`
   display: flex;
   flex-direction: column;
-  row-gap: 9.188rem;
   padding: 1.5rem 0;
+  row-gap: 5rem;
 
   @media (min-width: ${(props) => props.theme.media.laptop}) {
+    row-gap: 7rem;
     padding: 3rem 0;
   }
 
   @media (min-width: ${(props) => props.theme.media.desktop}) {
+    row-gap: 9.188rem;
     padding-bottom: 15.125rem;
   }
 `;

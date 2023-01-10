@@ -6,7 +6,11 @@ import styled from "styled-components";
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  row-gap: 8.688rem;
+  row-gap: 5rem;
+  
+  @media (min-width: ${props => props.theme.media.laptop}) {
+    row-gap: 8.688rem;
+  }
 `;
 
 const Header = styled.div`
@@ -25,10 +29,10 @@ const Box = styled.div`
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   justify-content: center;
-  gap: 5rem 10px;
+  gap: 3.5rem 10px;
 
   @media (min-width: ${(props) => props.theme.media.tablet}) {
-    column-gap: 3.5rem;
+    gap: 5rem 3.5rem;
   }
 
   @media (min-width: ${(props) => props.theme.media.laptop}) {
